@@ -1,0 +1,4 @@
+jstoolbox
+=========
+
+Useful JavaScript functions
