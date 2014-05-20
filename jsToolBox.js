@@ -14,3 +14,23 @@ function getCookie(cname) {
 	}
 	return "";
 }
+/*Store all url parameters into a hash*/
+function getUrlParametersHash(){
+	var hash = {};
+	for(var i = 0; i < location.search.replace('?','').split('&').length; i++) {
+		//console.log(location.search.replace('?','').split('&')[i].split('='));
+		hash[location.search.replace('?','').split('&')[i].split('=')[0]] = location.search.replace('?','').split('&')[i].split('=')[1];
+	}
+	return hash;
+}
+/*Store all url parameters into a array of objects*/
+function getUrlParametersArray() {
+	var array = [];
+		for(var i = 0; i < location.search.replace('?','').split('&').length; i++) {
+		var hash = {};
+		//console.log(location.search.replace('?','').split('&')[i].split('='));
+		hash[location.search.replace('?','').split('&')[i].split('=')[0]] = location.search.replace('?','').split('&')[i].split('=')[1];
+		array[i] = hash;
+	}
+	return array;
+}
